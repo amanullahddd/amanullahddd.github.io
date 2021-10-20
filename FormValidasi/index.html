@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pendaftaran Belajar Tatap Muka</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <img src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-pendidikan.92aef756.webp" alt="logokemen" style="padding-right: 10px;">
+        <img src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-white.d216d864.webp" alt="logokm">
+    </header>
+    <h1>Form Pendaftaran Belajar Tatap Muka Kampus Merdeka</h1>
+    <div class="container">
+        <form name="formPendaftaran" action="daftar.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name="nama" placeholder="Nama lengkap" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>NRP</label>
+                <input type="text" name="nrp" placeholder="Ketik NRP lengkap" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email Aktif" class="form-control">
+                <small id="emailHelp" class="form-text text-muted">Email Akan Digunakan Untuk Mengirimkan Notifikasi.</small>
+            </div>
+            <div class="form-group">
+                <label>Domisili</label>
+                <input type="text" name="domisili" placeholder="Kota, Provinsi" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Departemen</label>
+                <select name="departemen" class="form-control">
+                        <option value="0">Pilih Departemen</option>
+                        <option value="1">Departemen Fisika</option>
+                        <option value="2">Departemen Matematika</option>
+                        <option value="3">Departemen Statistika</option>
+                        <option value="4">Departemen Kimia</option>
+                        <option value="5">Departemen Biologi</option>
+                        <option value="6">Departemen Aktuaria</option>
+                        <option value="7">Departemen Teknik Mesin</option>
+                        <option value="8">Departemen Teknik Kimia</option>
+                        <option value="9">Departemen Teknik fisika</option>
+                        <option value="10">Departemen Teknik Sistem dan Industri</option>
+                        <option value="11">Departemen Teknik Material dan Metalurgi</option>
+                        <option value="11">Departemen Teknik Pangan</option>
+                        <option value="12">Departemen Arsitektur</option>
+                        <option value="13">Departemen Teknik Lingkungan</option>
+                        <option value="14">Departemen Perencanaan Wilayah dan Kota</option>
+                        <option value="15">Departemen Teknik Geomatika</option>
+                        <option value="16">Departemen Teknik Geofisika</option>
+                        <option value="17">Departemen Teknik Perkapalan</option>
+                        <option value="18">Departemen Teknik Sistem Perkapalan</option>
+                        <option value="19">Departemen Teknik Kelautan</option>
+                        <option value="20">Departemen Teknik Transportasi Laut</option>
+                        <option value="21">Departemen Teknik Lepas Pantai</option>
+                        <option value="22">Departemen Teknik Elektro</option>
+                        <option value="23">Departemen Teknik Biomedik</option>
+                        <option value="24">Departemen Teknik Komputer</option>
+                        <option value="25">Departemen Informatika</option>
+                        <option value="26">Departemen Sistem Informasi</option>
+                        <option value="27">Departemen Teknologi Informasi</option>
+                        <option value="28">Departemen Desain Produk</option>
+                        <option value="29">Departemen Desain Interior</option>
+                        <option value="30">Departemen Desain Komunikasi Visual</option>
+                        <option value="31">Departemen Manajemen Bisnis</option>
+                        <option value="32">Departemen Studi Pembangunan</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label>Status Vaksin</label>
+                <select name="statusv" class="form-control">
+                        <option value="0">Pilih</option>
+                        <option value="1">Belum sama sekali</option>
+                        <option value="2">Vaksin Pertama</option>
+                        <option value="3">Vaksin Kedua</option>
+                        <option value="3">Booster</option>
+                    </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <div class="font-weight-light text-center p-4">
+            Copyright 2021 by Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI
+        </div>
+    </footer>
+
+</body>
+</html>
