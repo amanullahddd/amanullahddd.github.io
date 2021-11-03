@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Request file dengan Ajax</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script language = "javascript">
+        var XMLHttpRequestObject=false;
+        if (window.XMLHttpRequest) {
+          XMLHttpRequestObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+          XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHttp");
+        }
+        function getdata(url,divhasil) {
+          if (XMLHttpRequestObject) {
+            var obj = document.getElementById(divhasil);
+            XMLHttpRequestObject.open("GET", url);
+            XMLHttpRequestObject.onreadystatechange = function() {
+            if (XMLHttpRequestObject.readyState == 1) {
+              obj.innerHTML = "Loading";
+            }
+            if (XMLHttpRequestObject.readyState == 4 && 
+        
+        XMLHttpRequestObject.status == 200) {
+              obj.innerHTML = XMLHttpRequestObject.responseText;
+            }
+            }
+          XMLHttpRequestObject.send(null);
+          }
+        }
+        </script>
+
+    <style>
+      header {
+        background-color: #2a2a2a;
+        height: 80px;
+        width: 100%;
+        padding: 5px 0px 0px 30px;
+      }
+
+    </style>
+</head>
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/AJAX_logo_by_gengns.svg/2560px-AJAX_logo_by_gengns.svg.png" style="width: 10%;">
+</header>
+<body style="background-image: linear-gradient(120deg, #484b6a 0%, #9394a5 100%);">
+  <div class="jumbotron vertical-center">
+    <div class="container p-2 card" style="max-width: 45rem;">
+      <h1 class="text-center my-3">Mengambil data dari file HTML</h1>
+      <div class="row">
+        <div class="col text-center my-3">
+          <form name="my-form">
+            <input type="button" value="Tampilkan Kata" onclick="getdata ('tampil.html','divhasil')" class="btn btn-primary">
+            <input type="button" value="Tampilkan Kata" onclick="getdata ('tampil2.html','divhasil')" class="btn btn-primary">
+        </form>
+        </div>
+      </div>
+      <div id="divhasil" class="text-center my-3">
+        <h5>Tampilkan kata-kata dengan menekan tombol di atas</h5> 
+    </div>
+    <input type="button" value="Kembali" onclick="window.location.href='../index.html'" class="btn btn-success my-2">
+    </div>
+  </div>
+  
+  <div class="navbar bg-dark fixed-bottom">
+    <div style="color: #fff;">© <?php echo date('Y'); ?> Asynchronous JavaScript and XML
+        @AJAX programming
+    </div>
+  </div>
+</body>
+</html>
