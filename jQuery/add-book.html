@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Book JQuery</title>
+    <style>
+        header {
+          background-color: #8FD6E1;
+          height: 80px;
+          width: 100%;
+          padding: 25px 0px 0px 30px;
+        }
+        
+        .container {
+            -webkit-animation: fadein 1.5s;
+            -moz-animation: fadein 1.5s;
+            animation: fadein 1.5s;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        .input-group {
+            padding: 15px 0px 0px 20px;
+        }
+    </style>
+</head>
+<body style="background-image: linear-gradient(120deg, #1597BB 0%, #9394a5 100%);">
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/JQuery_logo.svg/220px-JQuery_logo.svg.png" style="width: 10%;">
+    </header>
+      <div class="jumbotron vertical-center">
+        <div class="container p-2 card" style="max-width: 45rem;">
+          <h1 class="text-center my-3">Input new Book to the List</h1>
+          <div class="row">
+            <div class="col text-center my-3">
+              <form name="my-form">
+                <div class="input-group">
+                    <label class="label">Book Title</label>&emsp;
+                    <input class="input-style" type="text" name="titleBook" id="titleBook">
+                </div>
+
+                <div class="input-group">
+                    <label class="label">Book List</label>&emsp;
+                    <div class="select-wrapper">
+                        <select name="listBook" id="listBook" class="select-style">
+                            <option selected="selected" disabled="disabled" value="">Pilih</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <input class="btn-green" id="btnAdd" type="button" value="Tambah">
+                </div>
+            </form>
+            <input type="button" value="Kembali" onclick="window.location.href='./index.html'" class="btn btn-success my-2">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="navbar bg-dark fixed-bottom">
+        <div style="color: #fff;">© The jQuery Team
+            @JQuery
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#btnAdd').click(function () {
+                var newBook = $('#titleBook').val();
+                
+                if (newBook == "") {
+                    return;
+                }
+
+                else {
+                    $('#listBook').append(new Option(newBook, newBook));
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

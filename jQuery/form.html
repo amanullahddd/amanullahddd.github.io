@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form JQuery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        header {
+          background-color: #8FD6E1;
+          height: 80px;
+          width: 100%;
+          padding: 25px 0px 0px 30px;
+        }
+    .error {
+        font-size: small;
+        color: red;
+    }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/JQuery_logo.svg/220px-JQuery_logo.svg.png" style="width: 10%;">
+    </header>
+    <div class="jumbotron vertical-center">
+        <div class="container p-2 card" style="max-width: 35rem;">
+            <h1 class="text-center">Form Validasi Data Mahasiswa</h1>
+ 
+    <div class="container">
+        <div class="col-lg-10 m-auto d-block">
+            <div class="forM">
+                <form id="formValid">
+                    <div class="form-group">
+                        <label class="Nama">Nama</label>
+                        <input class="form-control" type="text" name="nama" id="nama" maxlength="50" required>
+                    </div>
+           
+                    <div class="form-group">
+                        <label class="NRP">NRP</label>
+                        <input class="form-control" type="text" name="nrp" id="nrp" maxlength="14" required>
+                    </div>
+           
+                    <div class="form-group">
+                        <label class="Alamat">Alamat</label>
+                        <input class="form-control" type="text" name="Alamat" id="Alamat" required>
+                    </div>
+   
+                    <div class="form-group">
+                        <label class="Tanggal Lahir">Tanggal Lahir</label>
+                        <input class="form-control" type="date" name="tanggal" id="tanggal" required>
+                    </div>
+           
+                    <div class="form-group">
+                        <label class="Umur">Umur</label>
+                        <input class="form-control" type="number" name="umur" id="umur" required>
+                    </div>
+           
+                    <div class="form-group">
+                        <label class="Email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email" required>
+                    </div>
+           
+                    <div class="form-group">
+                        <label class="password">Password</label>
+                        <input class="form-control" type="password" name="pass1" id="pass1" required>
+                    </div>
+           
+                    <div class="form-group">
+                        <label class="Konfirmasi Password">Konfirmasi Password</label>
+                        <input class="form-control" type="password" name="pass2" id="pass2" required>
+                    </div>
+           
+                    <div class="p-t-15">
+                        <button class="form-submit-button" type="submit">Submit</button>
+                    </div>
+                </form>
+                <div class="text-center"><input type="button" value="Kembali" onclick="window.location.href='./index.html'" class="btn btn-success my-2"></div>
+                
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    
+
+    <div class="navbar bg-dark fixed-bottom">
+        <div style="color: #fff;">© The jQuery Team
+            @JQuery
+        </div>
+    </div>
+
+    <script >
+         $(document).ready(function() {
+        $('#formValid').validate({
+            rules: {
+                nrp: {
+                    digits: true,
+                    minlength: 14,
+                    maxlength: 14
+                },
+   
+                umur: {
+                    digits: true,
+                    range: [0, 100]
+                },
+   
+                email: {
+                    email: true
+                },
+   
+                pass2: {
+                    equalTo: "#pass1"
+                }
+            },
+   
+            messages: {
+                nama: {
+                    required: "Nama tidak boleh kosong"
+                },
+   
+                nrp: {
+                    required: "NRP tidak boleh kosong",
+                    minlength: "Kolom NRP harus 14 digit",
+                    maxlength: "Kolom NRP harus 14 digit"
+                },
+   
+                Alamat: {
+                    required: "Alamat tidak boleh kosong"
+                },
+               
+                tanggal: {
+                    required: "Tanggal lahir tidak boleh kosong",
+                },
+   
+                umur: {
+                    required: "Umur tidak boleh kosong"
+                },
+   
+                email: {
+                    required: "Email tidak boleh kosong",
+                    email: "Format yang dimasukkan tidak valid"
+                },
+   
+                situs: {
+                    required: "Kolom situs website harus diisi",
+                    url: "Masukkan format situs website dengan benar"
+                },
+   
+                pass1: {
+                    required: "Password tidak boleh kosong"
+                },
+   
+                pass2: {
+                    required: "Masukkan kembali password Anda",
+                    equalTo: "Password tidak sama"
+                }
+            }
+        });
+    });
+    </script>
+ 
+</body>
+</html>
