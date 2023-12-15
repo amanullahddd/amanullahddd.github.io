@@ -88,8 +88,3 @@ footer p {
 footer p i {
   color: salmon;
 }
-
-form .checkout-button.disabled {
-  background-color: #999;
-  cursor: not-allowed;
-}
