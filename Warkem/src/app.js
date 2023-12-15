@@ -112,29 +112,29 @@ Data Pesanan
   Terima kasih.`;
 };
 
-const kontakButton = document.querySelector(".kontak-button");
-const kontakForm = document.querySelector("#kontakForm");
+// const kontakButton = document.querySelector(".kontak-button");
+// const kontakForm = document.querySelector("#kontakForm");
 
 // kirim data ketika tombol kontak diklik
-kontakButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  const formData = new FormData(kontakForm);
-  const data = new URLSearchParams(formData);
-  const objData = Object.fromEntries(data);
-  const message = formatPesan(objData);
-  window.open(
-    "https://wa.me/6281232245223?text=" + encodeURIComponent(message)
-  );
-});
+// kontakButton.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   const formData = new FormData(kontakForm);
+//   const data = new URLSearchParams(formData);
+//   const objData = Object.fromEntries(data);
+//   const message = formatPesan(objData);
+//   window.open(
+//     "https://wa.me/6281232245223?text=" + encodeURIComponent(message)
+//   );
+// });
 
-const formatPesan = (obj) => {
-  return `Data Pengirim
-  Nama: ${obj.name}
-  Email: ${obj.email}
-  No HP: ${obj.phone}
-Pesan yang ingin disampaikan:
-  `;
-};
+// const formatPesan = (obj) => {
+//   return `Data Pengirim
+//   Nama: ${obj.name}
+//   Email: ${obj.email}
+//   No HP: ${obj.phone}
+// Pesan yang ingin disampaikan:
+//   `;
+// };
 
 // konversi ke Rupiah
 const rupiah = (number) => {
