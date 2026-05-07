@@ -6,29 +6,16 @@
   display: block;
   position: relative;
   margin: auto;
-  /* top: ;
-  left: ;
-  right: ;
-  bottom: ; */
 }
 .rela-inline {
   display: inline-block;
   position: relative;
   margin: auto;
-  /* top: ;
-  left: ;
-  right: ;
-  bottom: ; */
 }
 .floated {
   display: inline-block;
   position: relative;
   margin: false;
-  /* top: ;
-  left: ;
-  right: ;
-  bottom: ;
-  float: left; */
 }
 .abs-center {
   display: false;
@@ -170,9 +157,7 @@ h3 {
   position: absolute;
   margin: false;
   top: 70%;
-  /* left: ; */
   right: 10%;
-  /* bottom: ; */
   cursor: pointer;
   font-family: "Montserrat";
   font-size: 55px;
@@ -270,5 +255,119 @@ h3 {
     letter-spacing: 6px;
     font-weight: 100;
     line-height: 48px;
+  }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media screen and (max-width: 850px) {
+  /* Reset body background untuk mobile agar lebih bersih */
+  body {
+    background: #f4f4f4;
+  }
+
+  body:before {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* Membuat Top Bar menyesuaikan tinggi konten */
+  .top-bar {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  /* Mengubah nama dari posisi absolute ke relatif agar tidak menabrak */
+  .name {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: 4px;
+    margin-top: 20px;
+  }
+
+  /* Sidebar dipindah ke atas atau urutan normal (Stacking) */
+  .side-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background-color: #f7e0c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Menyesuaikan foto profil agar berada di tengah di mobile */
+  .mugshot {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto 20px;
+  }
+
+  .logo {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  /* Kontainer konten utama mengambil lebar penuh */
+  .content-container {
+    width: 100%;
+    padding: 30px 20px;
+    margin: 0;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .greyed {
+    max-width: 100%;
+  }
+
+  /* Penyesuaian ikon sosial media agar rata tengah */
+  .social {
+    padding-left: 45px;
+    display: inline-block;
+    text-align: left;
+    margin: 10px auto;
+  }
+
+  .side-header {
+    width: 100%;
+    margin: 30px auto 15px;
+  }
+
+  /* Menyesuaikan gambar portofolio agar responsif */
+  .vertical img {
+    width: 80px !important;
+  }
+
+  .justified {
+    text-align: left; /* Lebih mudah dibaca di layar sempit */
+  }
+}
+
+/* Screen sangat kecil (iPhone SE / sejenisnya) */
+@media screen and (max-width: 480px) {
+  .name {
+    font-size: 24px;
+  }
+
+  h2.title {
+    font-size: 18px;
   }
 }
